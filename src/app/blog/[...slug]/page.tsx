@@ -21,15 +21,19 @@ async function ArticlePage({ params: { slug } }: PageParams) {
   // console.log(slug[1]);
 
   return (
-    <article className="prose pb-3 prose-sm md:prose-base lg:prose-lg dark:prose-invert container mx-auto">
-      <img
-        src={urlFor(post[0].cover).url()}
-        alt="thumbnail"
-        loading="lazy"
-        className="w-full h-[395px]"
-      />
-      <PortableText value={post[0].body} />
-    </article>
+    <>
+      <div className="flex flex-col space-y-5">
+        <img
+          src={urlFor(post[0].cover).url()}
+          alt="thumbnail"
+          loading="lazy"
+          className="w-[1020px] h-[397px] mx-auto rounded-t-sm"
+        />
+        <article className="prose prose-lg pb-3 dark:prose-invert mx-auto prose-h1:text-4xl">
+          <PortableText value={post[0].body} />
+        </article>
+      </div>
+    </>
   );
 }
 

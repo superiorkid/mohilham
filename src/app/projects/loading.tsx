@@ -14,7 +14,7 @@ function loading() {
         <div className="bg-slate-300 h-5 w-20"></div>
       </div>
       <div className="pt-2 flex flex-wrap sm:space-y-2 gap-4 justify-center">
-        {[1, 2, 3, 4].map((repos) => (
+        {[1, 2, 3].map((repos) => (
           <LoadingCard key={repos} />
         ))}
       </div>
