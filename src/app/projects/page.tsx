@@ -28,6 +28,11 @@ const getRepository = async () => {
 
 async function ProjectPage() {
   const repository = await getRepository();
+  const calculateTotalStars = repository.reduce(
+    (previousValue, currentValue) =>
+      previousValue + currentValue.stargazers_count,
+    0
+  );
 
   return (
     <div className="py-5 space-y-3">
@@ -60,7 +65,7 @@ async function ProjectPage() {
           <label>Total stars</label>
           <span className="flex flex-row items-center text-black font-semibold">
             <FaStar className="ml-1" />
-            1.2K
+            {calculateTotalStars}
           </span>
         </div>
       </div>
