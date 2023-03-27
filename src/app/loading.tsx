@@ -4,7 +4,7 @@ import React from "react";
 function loading() {
   return (
     <div>
-      <div className="py-5 md:flex md:flex-row space-x-1">
+      <div className="py-5 md:flex md:flex-row space-x-1 animate-pulse">
         <div className="bg-slate-300 h-[250px] w-[250px] rounded-full"></div>
         <div className="p-6 space-y-5">
           <div className="space-y-2">

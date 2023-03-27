@@ -3,7 +3,7 @@ import LoadingCard from "./components/LoadingCard";
 
 function loading() {
   return (
-    <div className="py-5 space-y-3">
+    <div className="py-5 space-y-3 animate-pulse">
       <div className="flex flex-row space-x-1">
         <div className="h-5 w-10 bg-slate-300"></div>
         <div className="h-3 w-4 bg-slate-300"></div>
