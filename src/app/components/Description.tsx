@@ -3,14 +3,14 @@ import React from "react";
 function Description() {
   return (
     <article className="font-sm font-light text-black">
-      Hi there! I`m Oleksii. I work as a full-time software engineer. In my
-      spare time I do open-sourcing (normally it is about 1-2 hours in the
-      morning before the work). Most of my open-source projects are focused on
-      one thing – to help people learn. You may use these projects to learn
-      about algorithms in JavaScript and get prepared for technical interviews,
-      or to learn Python syntax and start experimenting with machine learning
-      algorithms and math behind them, etc. I also write articles about life,
-      web-development and machine learning.
+      Hello everyone, I am Moh. Ilhamuddin. I am a final semester student who is
+      preparing for the final project. I like learning about computers. I am so
+      interested in coding that almost 2/3 of my day is spent in front of the
+      computer studying. That`s what I`ve been doing since I was in high school.
+      I love learning programming languages and I always implement them in
+      independent projects that I make while filling my free time so that I can
+      improve my abilities and skills. Besides studying, I also like to play
+      games as a distraction.
     </article>
   );
 }

@@ -16,6 +16,7 @@ import { MdOutlineLocationOn } from "react-icons/md";
 import Link from "next/link";
 import Description from "./components/Description";
 import MediaConnect from "./components/MediaConnect";
+import Skills from "./components/Skills";
 
 function Home() {
   return (
@@ -46,13 +47,7 @@ function Home() {
             </p>
           </div>
 
-          <div className="flex flex-row space-x-3 text-sm font-reg">
-            <span className="px-2 py-1 bg-gray-200 rounded-sm">JavaScript</span>
-            <span className="px-2 py-1 bg-gray-200 rounded-sm">Python</span>
-            <span className="px-2 py-1 bg-gray-200 rounded-sm">ReactJS</span>
-            <span className="px-2 py-1 bg-gray-200 rounded-sm">NextJS</span>
-            <span className="px-2 py-1 bg-gray-200 rounded-sm">Flask</span>
-          </div>
+          <Skills />
 
           <MediaConnect />
         </div>
