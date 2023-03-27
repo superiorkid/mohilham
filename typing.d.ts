@@ -47,7 +47,7 @@ export interface Repository {
   labels_url: string;
   releases_url: string;
   deployments_url: string;
-  created_at: string;
+  created_at: string | Date;
   updated_at: string;
   pushed_at: string;
   git_url: string;

@@ -4,6 +4,7 @@ import { FaStar } from "react-icons/fa";
 import { Repository } from "../../../typing";
 import Content from "./components/Content";
 import ReposCard from "./components/ReposCard";
+import SortedOption from "./components/SortedOption";
 
 export const metadata: Metadata = {
   title: "Ilham | Projects",
@@ -26,9 +27,24 @@ const getRepository = async () => {
   return data;
 };
 
-async function ProjectPage() {
+type PageParams = {
+  searchParams: {
+    sort: string;
+  };
+};
+
+async function ProjectPage({ searchParams: { sort } }: PageParams) {
   const repository = await getRepository();
-  console.log(repository);
+
+  const sortByDateDesc = repository
+    ?.map((obj) => {
+      return { ...obj, created_at: new Date(obj.created_at) };
+    })
+    .sort((a, b) => b.created_at.valueOf() - a.created_at.valueOf());
+
+  const sortByStarsDesc = repository.sort(
+    (a, b) => b.stargazers_count - a.stargazers_count
+  );
 
   const calculateTotalStars = repository.reduce(
     (previousValue, currentValue) =>
@@ -50,19 +66,7 @@ async function ProjectPage() {
       </div>
 
       <div className="flex flex-row justify-between">
-        <div>
-          <label className="font-reg text-sm text-slate-500 mr-1">
-            Sort by
-          </label>
-          <select name="cars" id="cars" className="rounded-lg">
-            <option value="startDateDesc" className="pl-2">
-              start date
-            </option>
-            <option value="starsDesc" className="pl-2">
-              stars
-            </option>
-          </select>
-        </div>
+        <SortedOption />
         <div className="font-reg text-sm text-slate-500 flex flex-row items-center">
           <label>Total stars</label>
           <span className="flex flex-row items-center text-black font-semibold">
@@ -72,9 +76,13 @@ async function ProjectPage() {
         </div>
       </div>
       <div className="pt-2 flex flex-wrap sm:space-y-2 gap-4 justify-center">
-        {repository.map((repos) => (
-          <ReposCard key={repos.id} repo={repos} />
-        ))}
+        {sort === "starsDesc"
+          ? sortByStarsDesc.map((repos) => (
+              <ReposCard key={repos.id} repo={repos} />
+            ))
+          : sortByDateDesc.map((repos) => (
+              <ReposCard key={repos.id} repo={repos} />
+            ))}
       </div>
     </div>
   );
