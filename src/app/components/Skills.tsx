@@ -1,16 +1,41 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 const skillList = [
-  "TypeScript",
-  "Python",
-  "ReactJS",
-  "NextJS",
-  "Flask",
-  "MongoDB",
-  "Postgresql",
-  "MySQL",
+  {
+    name: "TypeScript",
+    url: "https://www.typescriptlang.org/",
+  },
+  {
+    name: "Python",
+    url: "https://www.python.org/",
+  },
+  {
+    name: "ReactJs",
+    url: "https://react.dev/",
+  },
+  {
+    name: "NextJs",
+    url: "https://nextjs.org/",
+  },
+  {
+    name: "Flask",
+    url: "https://flask.palletsprojects.com/en/2.2.x/",
+  },
+  {
+    name: "MongoDB",
+    url: "https://www.mongodb.com/",
+  },
+  {
+    name: "PostgreSQL",
+    url: "https://www.postgresql.org/",
+  },
+  {
+    name: "MySQL",
+    url: "https://www.mysql.com/",
+  },
 ];
 
 function Skills() {
@@ -21,14 +46,22 @@ function Skills() {
       <div className="flex flex-row space-x-3 text-sm font-reg">
         {!showMore
           ? skillList.slice(0, 3).map((skill, index) => (
-              <span className="px-2 py-1 bg-gray-200 rounded-sm" key={index}>
-                {skill}
-              </span>
+              <Link
+                href={skill.url}
+                className="px-2 py-1 bg-gray-200 rounded-sm"
+                key={index}
+              >
+                {skill.name}
+              </Link>
             ))
           : skillList.map((skill, index) => (
-              <span className="px-2 py-1 bg-gray-200 rounded-sm" key={index}>
-                {skill}
-              </span>
+              <Link
+                href={skill.url}
+                className="px-2 py-1 bg-gray-200 rounded-sm"
+                key={index}
+              >
+                {skill.name}
+              </Link>
             ))}
         {/* <span className="px-2 py-1 bg-gray-200 rounded-sm">TypeScript</span> */}
       </div>

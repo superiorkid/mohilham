@@ -4,7 +4,7 @@ import { FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 
 function MediaConnect() {
   return (
-    <div className="flex flex-row space-x-3 py-3 text-2xl">
+    <div className="flex flex-row space-x-4 py-3 text-2xl">
       <Link href="https://github.com/superiorkid">
         <FaGithub />
       </Link>
