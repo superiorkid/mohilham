@@ -21,9 +21,8 @@ const getLang = async (URL: string) => {
 
 async function LanguagesList({ lang_url }: { lang_url: string }) {
   const languages = Object.keys(await getLang(lang_url)).slice(0, 4); //get top 4
-  console.log(languages);
   return (
-    <div className="flex flex-row text-xs font-light space-x-2">
+    <div className="flex flex-row text-xs font-light space-x-1">
       {languages &&
         languages.map((language, index) => (
           <span className="bg-gray-300 p-1 rounded-md" key={index}>

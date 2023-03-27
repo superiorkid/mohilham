@@ -28,6 +28,8 @@ const getRepository = async () => {
 
 async function ProjectPage() {
   const repository = await getRepository();
+  console.log(repository);
+
   const calculateTotalStars = repository.reduce(
     (previousValue, currentValue) =>
       previousValue + currentValue.stargazers_count,
