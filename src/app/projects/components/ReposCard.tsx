@@ -12,7 +12,7 @@ type PageProps = {
 function ReposCard({ repo }: PageProps) {
   return (
     <>
-      <div className="border flex flex-col mt-auto rounded-md shadow-md px-3 py-5 w-[368px] space-y-3 hover:bg-slate-50">
+      <div className="border flex flex-col mt-auto rounded-md shadow-md px-3 py-5 w-[368px] space-y-3 hover:bg-slate-50 items-stretch h-[290px]">
         <div>
           <h3 className="text-lg font-medium">{repo.name}</h3>
         </div>
