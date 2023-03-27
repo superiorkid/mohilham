@@ -20,30 +20,18 @@ const getLang = async (URL: string) => {
 };
 
 async function LanguagesList({ lang_url }: { lang_url: string }) {
-  const languages = Object.keys(await getLang(lang_url)).slice(0, 3); //get top 4
-
-  // if (languages.length > 0) {
-  //   <div className="text-xs font-regs flex flex-row space-x-3">
-  //     {languages.map((lang, index) => (
-  //       <span key={index} className="px-2 py-1 bg-gray-200">
-  //         {lang}
-  //       </span>
-  //     ))}
-  //   </div>;
-
+  const languages = Object.keys(await getLang(lang_url)).slice(0, 4); //get top 4
+  console.log(languages);
   return (
-    <div>
-      <h3>Hello</h3>
+    <div className="flex flex-row text-xs font-light space-x-2">
+      {languages &&
+        languages.map((language, index) => (
+          <span className="bg-gray-300 p-1 rounded-md" key={index}>
+            {language}
+          </span>
+        ))}
     </div>
   );
-
-  //   <div className="text-xs font-regs flex flex-row space-x-3">
-  //   {languages.map((lang, index) => (
-  //     <span key={index} className="px-2 py-1 bg-gray-200">
-  //       lang
-  //     </span>
-  //   ))}
-  // </div>
 }
 
 export default LanguagesList;
