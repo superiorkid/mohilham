@@ -20,8 +20,8 @@ import Skills from "./components/Skills";
 
 function Home() {
   return (
-    <div>
-      <div className="py-5 md:flex md:flex-row space-x-1">
+    <div className="px-5">
+      <div className="py-5 md:flex md:flex-row space-x-1 w-full">
         <div>
           <Image
             src="/me.jpg"
@@ -46,9 +46,7 @@ function Home() {
               Lombok, West Nusa Tenggara
             </p>
           </div>
-
           <Skills />
-
           <MediaConnect />
         </div>
       </div>
