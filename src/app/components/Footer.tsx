@@ -6,8 +6,8 @@ import { FaRss, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
 function Footer() {
   return (
-    <div className="flex space-x-12 flex-row py-5">
-      <div className="flex flex-row space-x-3">
+    <div className="justify-center md:justify-start flex flex-row py-5 md:pb-5 md:pt-14 px-5">
+      <div className="flex flex-row space-x-11 md:space-x-5">
         <Link
           href="#subscribe"
           className="flex flex-row items-center space-x-1"
