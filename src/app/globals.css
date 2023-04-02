@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mobile-menu-button {
+  @apply text-white hover:text-orange-500 text-sm block py-2 px-3 rounded-md;
+}
