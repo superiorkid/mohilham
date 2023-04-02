@@ -43,7 +43,7 @@ function Skills() {
 
   return (
     <div className="flex flex-row w-full space-x-3">
-      <div className="flex flex-row space-x-3 text-sm font-reg">
+      <div className="flex flex-wrap space-y-1 space-x-3 text-sm font-reg max-w-5xl">
         {!showMore
           ? skillList.slice(0, 3).map((skill, index) => (
               <Link

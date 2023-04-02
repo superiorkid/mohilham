@@ -2,9 +2,14 @@
 
 import React, { useState } from "react";
 import NavItem from "./NavItem";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const navItemStyle = "font-bold";
 
 function Navbar() {
   const [openMobileMenu, setOpenMobileMenu] = useState<boolean>(false);
+  const pathname = usePathname();
 
   return (
     <header className="py-5">
@@ -55,15 +60,30 @@ function Navbar() {
         <div
           className={`${!openMobileMenu && "hidden"} space-y-3 bg-black py-4`}
         >
-          <a href="#" className="mobile-menu-button">
-            About
-          </a>
-          <a href="#" className="mobile-menu-button">
-            Projects
-          </a>
-          <a href="#" className="mobile-menu-button">
-            Blog
-          </a>
+          <Link
+            href="/"
+            className={`hover:text-orange-500 mobile-menu-button ${
+              pathname === "/" ? `${navItemStyle}` : ""
+            }`}
+          >
+            ABOUT
+          </Link>
+          <Link
+            href="/projects"
+            className={`hover:text-orange-500 mobile-menu-button ${
+              pathname === "/projects" ? `${navItemStyle}` : ""
+            }`}
+          >
+            PROJECTS
+          </Link>
+          <Link
+            href="/blog"
+            className={`hover:text-orange-500 mobile-menu-button ${
+              pathname === "/blog" ? `${navItemStyle}` : ""
+            }`}
+          >
+            BLOG
+          </Link>
         </div>
       </div>
     </header>
