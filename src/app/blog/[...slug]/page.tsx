@@ -20,7 +20,7 @@ async function ArticlePage({ params: { slug } }: PageParams) {
 
   return (
     <>
-      <div className="flex flex-col space-y-5">
+      <div className="flex flex-col space-y-5 px-5">
         <img
           src={urlFor(post[0].cover).url()}
           alt="thumbnail"

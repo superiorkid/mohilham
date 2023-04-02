@@ -53,7 +53,7 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
   );
 
   return (
-    <div className="py-5 space-y-3">
+    <div className="py-5 space-y-3 px-5">
       <div className="flex flex-row space-x-1">
         <div>
           <h1 className="font-bold text-3xl">PROJECTS</h1>

@@ -61,6 +61,7 @@ function Navbar() {
           className={`${!openMobileMenu && "hidden"} space-y-3 bg-black py-4`}
         >
           <Link
+            onClick={(e) => setOpenMobileMenu(false)}
             href="/"
             className={`hover:text-orange-500 mobile-menu-button ${
               pathname === "/" ? `${navItemStyle}` : ""
@@ -69,6 +70,7 @@ function Navbar() {
             ABOUT
           </Link>
           <Link
+            onClick={(e) => setOpenMobileMenu(false)}
             href="/projects"
             className={`hover:text-orange-500 mobile-menu-button ${
               pathname === "/projects" ? `${navItemStyle}` : ""
@@ -77,6 +79,7 @@ function Navbar() {
             PROJECTS
           </Link>
           <Link
+            onClick={(e) => setOpenMobileMenu(false)}
             href="/blog"
             className={`hover:text-orange-500 mobile-menu-button ${
               pathname === "/blog" ? `${navItemStyle}` : ""
