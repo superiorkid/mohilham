@@ -12,7 +12,7 @@ function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="py-5">
+    <header className="py-5 fixed bg-white w-screen">
       <div className="justify-between px-5 md:justify-start flex flex-row items-center md:space-x-10">
         <div>
           <strong className="text-md font-extrabold">ILHAM</strong>
