@@ -53,8 +53,8 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
   );
 
   return (
-    <div className="py-5 space-y-3 px-5">
-      <div className="flex flex-row space-x-1">
+    <div className="py-5 space-y-3">
+      <div className="flex flex-row space-x-1 px-5">
         <div>
           <h1 className="font-bold text-3xl">PROJECTS</h1>
         </div>
@@ -65,7 +65,7 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
         </div>
       </div>
 
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between px-5">
         <SortedOption />
         <div className="font-reg text-sm text-slate-500 flex flex-row items-center">
           <label>Total stars</label>
