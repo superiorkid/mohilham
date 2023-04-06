@@ -8,13 +8,21 @@ export const metadata: Metadata = {
   title: "Ilham | Blog",
 };
 
+// export type TBlogCard = Pick<
+//   Post,
+//   "mainImage" | "categories" | "title" | "slug" | "publishedAt" | "_id" | "body"
+// >;
+
 const getPosts = async () => {
-  const posts: Post[] = await client.fetch('*[_type == "blog"]');
+  const query =
+    '*[_type == "post"]{categories[]->{title}, author, title, mainImage, publishedAt, slug, title}';
+  const posts: Post[] = await client.fetch(query);
   return posts;
 };
 
 async function BlogPage() {
   const posts = await getPosts();
+  // console.log(posts);
 
   return (
     <>
@@ -33,11 +41,9 @@ async function BlogPage() {
         {/* rest here */}
         <div className="md:space-y-4 py-2">
           {posts.map((post) => (
-            <BlogCard key={post._id} post={post} />
+            <BlogCard post={post} key={post._id} />
           ))}
         </div>
-
-        {/* rest here */}
       </div>
     </>
   );

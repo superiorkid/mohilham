@@ -121,8 +121,15 @@ interface Post {
   _type: string;
   _updatedAt: string;
   body: any;
-  cover: { _type: string; asset: any };
-  description: string;
-  slug: { _type: string; current: string };
+  categories: [{ title: string }];
+  mainImage: {
+    _type: string;
+    asset: any;
+  };
+  publishedAt: string;
+  slug: {
+    _type: string;
+    current: string;
+  };
   title: string;
 }
