@@ -38,8 +38,7 @@ const serializers = {
 
 async function ArticlePage({ params: { slug } }: PageParams) {
   const post = await getArticle(slug[1]);
-  console.log(post);
-
+  
   return (
     <>
       <div className="flex flex-col space-y-5 px-5">

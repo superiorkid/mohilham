@@ -8,11 +8,6 @@ export const metadata: Metadata = {
   title: "Ilham | Blog",
 };
 
-// export type TBlogCard = Pick<
-//   Post,
-//   "mainImage" | "categories" | "title" | "slug" | "publishedAt" | "_id" | "body"
-// >;
-
 const getPosts = async () => {
   const query =
     '*[_type == "post"]{categories[]->{title}, author, title, mainImage, publishedAt, slug, title}';
@@ -22,7 +17,6 @@ const getPosts = async () => {
 
 async function BlogPage() {
   const posts = await getPosts();
-  // console.log(posts);
 
   return (
     <>
@@ -48,5 +42,7 @@ async function BlogPage() {
     </>
   );
 }
+
+export const revalidate = 60;
 
 export default BlogPage;
