@@ -120,6 +120,7 @@ interface Post {
   _rev: string;
   _type: string;
   _updatedAt: string;
+  author: { name: string; image: any };
   body: any;
   categories: [{ title: string }];
   mainImage: {

@@ -3,6 +3,7 @@ import React from "react";
 import BlogCard from "./components/BlogCard";
 import client from "../../../client";
 import { Post } from "../../../typing";
+import CategoriesTab from "./components/CategoriesTab";
 
 export const metadata: Metadata = {
   title: "Ilham | Blog",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 
 const getPosts = async () => {
   const query =
-    '*[_type == "post"]{categories[]->{title}, author, title, mainImage, publishedAt, slug, title}';
+    '*[_type == "post"]{categories[]->{title}, author->{name, image->{image}}, title, mainImage, publishedAt, slug, title}';
   const posts: Post[] = await client.fetch(query);
   return posts;
 };

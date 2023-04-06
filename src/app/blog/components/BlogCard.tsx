@@ -14,7 +14,6 @@ type PageProps = {
 
 function BlogCard({ post }: PageProps) {
   const year = new Date().getFullYear();
-  console.log(post);
 
   return (
     <div className="md:flex md:flex-row space-x-3 border border-slate-200 shadow-sm rounded hover:bg-slate-50 hover:cursor-pointer">
