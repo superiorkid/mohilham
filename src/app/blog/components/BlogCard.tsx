@@ -27,17 +27,18 @@ function BlogCard({ post }: PageProps) {
           className="w-full h-full"
         />
       </div>
-      <div className="px-3 py-7 flex flex-col space-y-2">
-        <h1 className="font-md lg:font-lg text-2xl hover:text-orange-600 font-bold mb-1">
+      <div className="px-3 py-7 flex flex-col space-y-5">
+        <h1 className="font-md lg:font-lg text-2xl hover:text-orange-600 font-bold mb-3">
           <Link href={`/blog/${year}/${post.slug.current}`}>{post.title}</Link>
         </h1>
-        <div className="flex flex-row space-x-4 text-xs font-light text-slate-500 items-center">
+        <div className="flex flex-row space-x-4 text-xs font-light text-slate-500 items-center mb-2">
           <span className="flex flex-row">
             <FaCalendar className="mr-1" />
             {moment(post.publishedAt).format("MMM D, YYYY")}
           </span>
           <span className="flex flex-row">
-            <FaClock className="mr-1" />1 min to read
+            <FaClock className="mr-1" />
+            {post.estimatedReadingTime} min
           </span>
         </div>
         <div className="space-x-3">

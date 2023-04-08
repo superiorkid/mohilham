@@ -133,4 +133,5 @@ interface Post {
     current: string;
   };
   title: string;
+  estimatedReadingTime: string;
 }

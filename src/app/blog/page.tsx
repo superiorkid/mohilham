@@ -11,13 +11,14 @@ export const metadata: Metadata = {
 
 const getPosts = async () => {
   const query =
-    '*[_type == "post"]{categories[]->{title}, author->{name, image->{image}}, title, mainImage, publishedAt, slug, title}';
+    '*[_type == "post"]{categories[]->{title}, author->{name, image->{image}}, title, mainImage, publishedAt, slug, title, "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 )}';
   const posts: Post[] = await client.fetch(query);
   return posts;
 };
 
 async function BlogPage() {
   const posts = await getPosts();
+  console.log(posts);
 
   return (
     <>

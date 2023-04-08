@@ -8,7 +8,7 @@ import moment from "moment";
 
 const getArticle = async (slug: string) => {
   const post: Post[] = await client.fetch(
-    `*[slug.current == $slug]{categories[]->{title}, author->{name, image}, title, mainImage, publishedAt, slug, title, body}`,
+    `*[slug.current == $slug]{categories[]->{title}, author->{name, image}, title, mainImage, publishedAt, slug, title, body, "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 )}`,
     { slug }
   );
   return post;
@@ -73,7 +73,7 @@ async function ArticlePage({ params: { slug } }: PageParams) {
                 {moment(post[0].publishedAt).format("MMM D, YYYY")}
               </span>
               <span className="text-sm font-light md:text-md text-slate-500 md:font-medium">
-                1 min read
+                {post[0].estimatedReadingTime} min read
               </span>
             </div>
           </div>
