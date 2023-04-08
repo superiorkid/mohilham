@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { Repository } from "../../../typing";
-import Content from "./components/Content";
 import ReposCard from "./components/ReposCard";
 import SortedOption from "./components/SortedOption";
 
