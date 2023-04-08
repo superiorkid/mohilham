@@ -48,10 +48,7 @@ function Footer() {
           <FiMail />
           <span>Subscribe</span>
         </Link>
-        <Link
-          href="#subscribe"
-          className="flex flex-row items-center space-x-1"
-        >
+        <Link href="#rss" className="flex flex-row items-center space-x-1">
           <FaRss />
           <span>RSS</span>
         </Link>
