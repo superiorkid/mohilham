@@ -46,9 +46,9 @@ async function ArticlePage({ params: { slug } }: PageParams) {
           src={urlFor(post[0].mainImage).url()}
           alt="thumbnail"
           loading="lazy"
-          className="w-[800px] h-[225px] sm:h-[409px] mx-auto rounded-t-sm"
+          className="mx-auto rounded-t-sm"
           width={900}
-          height={650}
+          height={600}
         />
 
         <div className="max-w-6xl mx-autor py-5 bg-neutral-50 rounded-lg">
@@ -79,7 +79,7 @@ async function ArticlePage({ params: { slug } }: PageParams) {
           </div>
         </div>
 
-        <article className="prose prose-lg pb-3 dark:prose-invert mx-auto prose-h1:text-4xl">
+        <article className="prose prose:sm prose-slate md:prose-lg pb-3 dark:prose-invert mx-auto">
           <PortableText value={post[0].body} components={serializers} />
         </article>
       </div>

@@ -13,8 +13,8 @@ import {
 
 function Footer() {
   return (
-    <div className="justify-center md:justify-start flex flex-row py-5 md:pb-5 md:pt-14 px-5">
-      <div className="flex flex-row space-x-11 md:space-x-5">
+    <div className="md:justify-between flex flex-col-reverse items-center space-y-3 md:space-y-0 md:flex-row py-5 md:pb-5 md:pt-14 px-5">
+      <div>
         <span className="text-md text-neutral-600 flex items-center">
           Made with <FaHeart className="mx-1 text-red-500" /> by me
         </span>
@@ -39,6 +39,22 @@ function Footer() {
           <FaRss />
           <span>RSS</span>
         </Link> */}
+      </div>
+      <div className="flex flex-row space-x-5">
+        <Link
+          href="#subscribe"
+          className="flex flex-row items-center space-x-1"
+        >
+          <FiMail />
+          <span>Subscribe</span>
+        </Link>
+        <Link
+          href="#subscribe"
+          className="flex flex-row items-center space-x-1"
+        >
+          <FaRss />
+          <span>RSS</span>
+        </Link>
       </div>
     </div>
   );

@@ -35,8 +35,8 @@ async function BlogPage() {
 
         {/* rest here */}
         <div className="md:space-y-4 py-2">
-          {posts.map((post) => (
-            <BlogCard post={post} key={post._id} />
+          {posts.map((post, index) => (
+            <BlogCard post={post} key={index} />
           ))}
         </div>
       </div>
