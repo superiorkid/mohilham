@@ -21,7 +21,7 @@ import Skills from "./components/Skills";
 function Home() {
   return (
     <div className="px-5">
-      <div className="py-5 md:flex md:flex-row space-x-1">
+      <div className="py-5 flex flex-col md:flex-row space-x-1 items-center">
         <div>
           <Image
             src="/me.jpg"

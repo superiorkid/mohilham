@@ -16,7 +16,7 @@ const getArticle = async (slug: string) => {
 
 type PageParams = {
   params: {
-    slug: string[];
+    slug: string;
   };
 };
 
@@ -85,6 +85,16 @@ async function ArticlePage({ params: { slug } }: PageParams) {
       </div>
     </>
   );
+}
+
+// dynamic metadata
+export async function generateMetadata({ params: { slug } }: PageParams) {
+  const post = await getArticle(slug[1]);
+
+  return {
+    title: post[0].title,
+    desctiption: post[0].title,
+  };
 }
 
 export default ArticlePage;

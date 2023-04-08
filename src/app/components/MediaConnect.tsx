@@ -4,7 +4,7 @@ import { FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
 
 function MediaConnect() {
   return (
-    <div className="flex flex-row space-x-4 py-3 text-2xl">
+    <div className="flex flex-row space-x-4 py-3 text-2xl items justify-center md:justify-start">
       <Link
         href="https://github.com/superiorkid"
         className="hover:text-orange-600"
