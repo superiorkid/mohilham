@@ -74,7 +74,9 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
           </span>
         </div>
       </div>
-      <div className="pt-2 flex flex-wrap sm:space-y-2 gap-4 justify-center items-stretch">
+
+      {/*<div className="pt-2 flex flex-wrap sm:space-y-2 gap-4 justify-center items-stretch">*/}
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-center lg:grid-cols-3 gap-4 m-auto place-items-center px-3">
         {sort === "starsDesc"
           ? sortByStarsDesc.map((repos) => (
               <ReposCard key={repos.id} repo={repos} />

@@ -11,8 +11,7 @@ type PageProps = {
 
 function ReposCard({ repo }: PageProps) {
   return (
-    <>
-      <div className="border flex flex-col mt-auto rounded-md shadow-md px-3 py-5 w-[368px] space-y-3 hover:bg-slate-50 h-full">
+      <div className="border flex flex-col mt-auto rounded-md shadow-md px-3 py-5 space-y-3 hover:bg-slate-50 h-72 w-full relative">
         <div>
           <h3 className="text-lg font-medium">{repo.name}</h3>
         </div>
@@ -41,7 +40,7 @@ function ReposCard({ repo }: PageProps) {
         {/* @ts-expect-error Server Component */}
         <LanguagesList lang_url={repo.languages_url} />
 
-        <div className="pt-6 flex flex-row justify-between space-x-1">
+        <div className="pt-6 flex flex-row justify-between space-x-1 bottom-5 w-full absolute right-0 px-2">
           {repo.homepage && (
             <Link
               href={repo.homepage}
@@ -61,7 +60,6 @@ function ReposCard({ repo }: PageProps) {
           </Link>
         </div>
       </div>
-    </>
   );
 }
 
