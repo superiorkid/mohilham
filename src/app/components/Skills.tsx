@@ -5,24 +5,20 @@ import React, { useState } from "react";
 
 const skillList = [
   {
-    name: "TypeScript",
-    url: "https://www.typescriptlang.org/",
-  },
-  {
-    name: "Python",
-    url: "https://www.python.org/",
-  },
-  {
-    name: "ReactJs",
+    name: "React JS",
     url: "https://react.dev/",
   },
   {
-    name: "NextJs",
+    name: "Next JS",
     url: "https://nextjs.org/",
   },
   {
-    name: "Flask",
-    url: "https://flask.palletsprojects.com/en/2.2.x/",
+    name: "FastAPI",
+    url: "https://fastapi.tiangolo.com/",
+  },
+  {
+    name: "Express JS",
+    url: "https://expressjs.com/",
   },
   {
     name: "MongoDB",
@@ -31,10 +27,6 @@ const skillList = [
   {
     name: "PostgreSQL",
     url: "https://www.postgresql.org/",
-  },
-  {
-    name: "MySQL",
-    url: "https://www.mysql.com/",
   },
 ];
 

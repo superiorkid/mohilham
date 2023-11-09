@@ -1,19 +1,6 @@
 import Image from "next/image";
-import React from "react";
-import {
-  FaDev,
-  FaFacebook,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaMedium,
-  FaStackOverflow,
-  FaTwitter,
-  FaUniversity,
-  FaYoutube,
-} from "react-icons/fa";
-import { MdOutlineLocationOn } from "react-icons/md";
-import Link from "next/link";
+import { FaUniversity } from "react-icons/fa";
+import { MdOutlineLocationOn, MdOutlineWorkOutline } from "react-icons/md";
 import Description from "./components/Description";
 import MediaConnect from "./components/MediaConnect";
 import Skills from "./components/Skills";
@@ -38,8 +25,8 @@ function Home() {
               Moh. Ilhamuddin
             </h1>
             <span className="text-md text-slate-500 font-normal flex flex-row items-center">
-              <FaUniversity className="mr-1 text-lg" />
-              Student at Hamzanwadi University
+              <MdOutlineWorkOutline className="mr-1 text-lg" />
+              Freelance / Full Stack Web Developer
             </span>
             <p className="font-normal text-slate-500 flex flex-row items-center">
               <MdOutlineLocationOn className="mr-1 text-lg" />

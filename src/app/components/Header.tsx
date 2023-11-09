@@ -14,9 +14,7 @@ function Navbar() {
   return (
     <header className="py-5 fixed bg-white w-screen">
       <div className="justify-between px-5 md:justify-start flex flex-row items-center md:space-x-10">
-        <div>
-          <strong className="text-md font-extrabold">ILHAM</strong>
-        </div>
+        <strong className="text-md font-extrabold">ILHAM</strong>
         <div className="text-xs hidden md:flex">
           <NavItem />
         </div>
@@ -60,6 +58,7 @@ function Navbar() {
         <div
           className={`${!openMobileMenu && "hidden"} space-y-3 bg-black py-4`}
         >
+          b
           <Link
             onClick={(e) => setOpenMobileMenu(false)}
             href="/"

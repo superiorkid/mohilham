@@ -9,23 +9,6 @@ export const metadata: Metadata = {
   title: "Ilham | Projects",
 };
 
-const getRepository = async () => {
-  const res = await fetch("https://api.github.com/users/superiorkid/repos", {
-    method: "GET",
-    headers: {
-      Authorization: `token ${process.env.GITHUB_PERSONAL_TOKEN}`,
-    },
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error("failed to fetch repository.");
-  }
-
-  const data: Repository[] = await res.json();
-  return data;
-};
-
 type PageParams = {
   searchParams: {
     sort: string;
@@ -33,24 +16,6 @@ type PageParams = {
 };
 
 async function ProjectPage({ searchParams: { sort } }: PageParams) {
-  const repository = await getRepository();
-
-  const sortByDateDesc = repository
-    ?.map((obj) => {
-      return { ...obj, created_at: new Date(obj.created_at) };
-    })
-    .sort((a, b) => b.created_at.valueOf() - a.created_at.valueOf());
-
-  const sortByStarsDesc = repository.sort(
-    (a, b) => b.stargazers_count - a.stargazers_count
-  );
-
-  const calculateTotalStars = repository.reduce(
-    (previousValue, currentValue) =>
-      previousValue + currentValue.stargazers_count,
-    0
-  );
-
   return (
     <div className="py-5 space-y-3">
       <div className="flex flex-row space-x-1 px-5">
@@ -58,9 +23,7 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
           <h1 className="font-bold text-3xl">PROJECTS</h1>
         </div>
         <div>
-          <span className="px-3 bg-slate-300 text-xs rounded-full">
-            {repository.length}
-          </span>
+          <span className="px-3 bg-slate-300 text-xs rounded-full">35</span>
         </div>
       </div>
 
@@ -70,20 +33,18 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
           <label>Total stars</label>
           <span className="flex flex-row items-center text-black font-semibold">
             <FaStar className="ml-1" />
-            {calculateTotalStars}
+            15
           </span>
         </div>
       </div>
 
-      {/*<div className="pt-2 flex flex-wrap sm:space-y-2 gap-4 justify-center items-stretch">*/}
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-center lg:grid-cols-3 gap-4 m-auto place-items-center px-3">
-        {sort === "starsDesc"
-          ? sortByStarsDesc.map((repos) => (
-              <ReposCard key={repos.id} repo={repos} />
-            ))
-          : sortByDateDesc.map((repos) => (
-              <ReposCard key={repos.id} repo={repos} />
-            ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {Array.from({ length: 6 }).map((_, index) => (
+          <div key={index} className="bg-emerald-500 h-[44dvh] flex flex-col">
+            <div className="flex-1 bg-rose-500">image</div>
+            <div className="min-h-[7dvh]">caption</div>
+          </div>
+        ))}
       </div>
     </div>
   );
