@@ -5,11 +5,11 @@ import React, { useState } from "react";
 
 const skillList = [
   {
-    name: "React JS",
+    name: "React.js",
     url: "https://react.dev/",
   },
   {
-    name: "Next JS",
+    name: "Next.js",
     url: "https://nextjs.org/",
   },
   {
@@ -17,7 +17,7 @@ const skillList = [
     url: "https://fastapi.tiangolo.com/",
   },
   {
-    name: "Express JS",
+    name: "Express.js",
     url: "https://expressjs.com/",
   },
   {

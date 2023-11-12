@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { FaUniversity } from "react-icons/fa";
 import { MdOutlineLocationOn, MdOutlineWorkOutline } from "react-icons/md";
-import Description from "./components/Description";
-import MediaConnect from "./components/MediaConnect";
-import Skills from "./components/Skills";
+import Description from "@/components/Description";
+import MediaConnect from "@/components/MediaConnect";
+import Skills from "@/components/Skills";
 
 function Home() {
   return (
@@ -26,7 +26,7 @@ function Home() {
             </h1>
             <span className="text-md text-slate-500 font-normal flex flex-row items-center">
               <MdOutlineWorkOutline className="mr-1 text-lg" />
-              Freelance / Full Stack Web Developer
+              Full Stack Web Developer
             </span>
             <p className="font-normal text-slate-500 flex flex-row items-center">
               <MdOutlineLocationOn className="mr-1 text-lg" />

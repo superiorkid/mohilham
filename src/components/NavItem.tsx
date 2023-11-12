@@ -26,14 +26,6 @@ function NavItem() {
       >
         PROJECTS
       </Link>
-      <Link
-        href="/blog"
-        className={`hover:text-orange-500 ${
-          pathname === "/blog" ? `${navItemStyle}` : ""
-        }`}
-      >
-        BLOG
-      </Link>
     </nav>
   );
 }

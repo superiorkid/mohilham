@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { FaGithub, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
+import AcademiconsCv from "@/components/icons/AcademiconsCv";
 
 function MediaConnect() {
   return (
@@ -22,6 +23,13 @@ function MediaConnect() {
         className="hover:text-orange-600"
       >
         <FaInstagram />
+      </Link>
+      <Link
+        download
+        href="https://www.cakeresume.com/pdf/s--D_q5UHO5i0zQnaCbtDGN7w--/ZPM8X.pdf"
+        className="hover:text-orange-600"
+      >
+        <AcademiconsCv />
       </Link>
     </div>
   );
