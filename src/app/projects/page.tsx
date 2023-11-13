@@ -1,9 +1,10 @@
 import { Metadata } from "next";
 import React from "react";
-import { FaStar } from "react-icons/fa";
+import { FaGithub, FaPlay, FaStar } from "react-icons/fa";
 import SortedOption from "./components/SortedOption";
 import Image from "next/image";
 import Link from "next/link";
+import { FaRegStar } from "react-icons/fa6";
 
 export const metadata: Metadata = {
   title: "Ilham | Projects",
@@ -53,21 +54,24 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-            <div className="min-h-[60%] text-sm p-5 flex flex-col justify-between space-y-4">
+            <div className="min-h-[60%] text-sm py-5 px-6 flex flex-col justify-between space-y-6">
               <div>
                 <h1 className="text-2xl font-black">
                   <Link
                     href="/projects/nextagram"
                     className="hover:underline transition-transform"
                   >
-                    Location Sharing App
+                    Nextagram
                   </Link>
                 </h1>
                 <div className="mt-2 flex justify-between items-center">
-                  <p className="font-light">3 june 2000</p>
-                  <p className="font-bold">stars 120</p>
+                  <p className="font-medium text-gray-500">3 june 2000</p>
+                  <p className="font-bold items-center flex space-x-1.5 text-gray-700">
+                    <FaRegStar className="w-5 h-5" />
+                    <span>120</span>
+                  </p>
                 </div>
-                <p className="line-clamp-5 mt-3.5 leading-relaxed">
+                <p className="line-clamp-5 mt-3.5 leading-relaxed text-gray-600">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Atque autem beatae blanditiis, doloribus eveniet id odio
                   omnis. Aspernatur esse ex maiores porro tenetur. Alias amet
@@ -85,12 +89,14 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
                   ))}
                 </div>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4">
-                <button className="p-2 border border-gray-500 bg-white rounded-md font-medium">
-                  Demo
+              <div className="grid grid-cols-2 md:grid-cols-6 gap-x-4">
+                <button className="p-2 border border-gray-500 bg-white rounded-md font-medium col-span-2 flex space-x-2 items-center justify-center hover:bg-gray-200 transition-colors">
+                  <FaPlay className="h-4 w-4" />
+                  <span>Demo</span>
                 </button>
-                <button className="p-2 border border-gray-500 bg-white rounded-md font-medium">
-                  Source Code
+                <button className="p-2 border border-gray-500 bg-white rounded-md font-medium flex space-x-2 items-center col-span-2 justify-center hover:bg-gray-200 transition-colors">
+                  <FaGithub className="h-4 w-4" />
+                  <span>Source Code</span>
                 </button>
               </div>
             </div>

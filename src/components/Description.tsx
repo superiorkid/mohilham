@@ -2,15 +2,14 @@ import React from "react";
 
 function Description() {
   return (
-    <article className="font-sm font-light text-black">
-      Hello everyone, I am Moh. Ilhamuddin. I am a final semester student who is
-      preparing for the final project. I like learning about computers. I am so
-      interested in coding that almost 2/3 of my day is spent in front of the
-      computer studying. That`s what I`ve been doing since I was in high school.
-      I love learning programming languages and I always implement them in
-      independent projects that I make while filling my free time so that I can
-      improve my abilities and skills. Besides studying, I also like to play
-      games as a distraction.
+    <article className="font-sm text-black font-light tracking-wide leading-relaxed">
+      Hello! I&apos;m Moh Ilhamuddin, a passionate Full Stack Web Developer. My
+      expertise lies in crafting seamless and responsive user experiences using
+      React and Next.js on the frontend. On the backend, I thrive with the power
+      of FastAPI and Express.js to build robust and efficient server-side
+      solutions. With an eye for design, I enhance my projects with the elegance
+      of Tailwind CSS. Let&apos;s turn ideas into reality through the art of web
+      development!
     </article>
   );
 }
