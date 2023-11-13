@@ -1,7 +1,4 @@
 import Image from "next/image";
-import React from "react";
-import { TbBrandNextjs, TbBrandPrisma } from "react-icons/tb";
-import { BiLogoTailwindCss, BiLogoPostgresql } from "react-icons/bi";
 import Link from "next/link";
 import { MdKeyboardBackspace } from "react-icons/md";
 
@@ -22,13 +19,11 @@ function ProjectDetailPage({ params: { slug } }: Props) {
       <article className="prose-lg dark:prose-invert prose-h1:font-bold prose-h1:text-4xl">
         <h1 className="font-bold text-4xl mb-5">Nextagram</h1>
 
-        <div className="flex items-center justify-between">
-          <time className="font-medium text-gray-600">22 june 2000</time>
-          <p className="flex space-x-5 items-center">
-            <TbBrandNextjs className="w-8 h-8" />
-            <BiLogoTailwindCss className="w-8 h-8" />
-            <TbBrandPrisma className="w-8 h-8" />
-            <BiLogoPostgresql className="w-8 h-8" />
+        <div className="flex items-center justify-between text-sm">
+          <time className="text-gray-600">22 june 2000</time>
+          <p className="hidden md:block">
+            <span className="text-gray-500"> Tags:</span>
+            {"  "}Nextjs, TailwindCSS, Prisma, PostgreSQL
           </p>
         </div>
 
@@ -40,10 +35,11 @@ function ProjectDetailPage({ params: { slug } }: Props) {
             src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="detail headings"
             className="object-cover rounded-md brightness-75"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
 
-        <div className="mt-24">
+        <div className="mt-20 md:mt-24">
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse
             delectus saepe aliquid ab officia voluptas enim veritatis illo
