@@ -42,9 +42,9 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
         {Array.from({ length: 5 }).map((_, index) => (
           <div
             key={index}
-            className="aspect-square flex flex-col rounded-md shadow-md border"
+            className="aspect-square flex grow flex-col rounded-md shadow-md border"
           >
-            <div className="flex-1 relative h-[100vh]">
+            <div className="flex-1 relative aspect-video">
               <Image
                 fill
                 src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1955&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -53,11 +53,11 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-            <div className="h-3/5 text-sm p-5 flex flex-col justify-between">
+            <div className="min-h-[60%] text-sm p-5 flex flex-col justify-between space-y-4">
               <div>
                 <h1 className="text-2xl font-black">
                   <Link
-                    href="#gotosome"
+                    href="/projects/nextagram"
                     className="hover:underline transition-transform"
                   >
                     Location Sharing App
@@ -79,16 +79,13 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
 
                 <div className="flex space-x-2 mt-3.5">
                   {Array.from({ length: 3 }).map((_, index) => (
-                    <div
-                      key={index}
-                      className="border py-0.5 px-4 border bg-gray-200"
-                    >
+                    <div key={index} className="border py-0.5 px-4 bg-gray-200">
                       tag{index}
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="grid grid-cols-4 gap-x-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4">
                 <button className="p-2 border border-gray-500 bg-white rounded-md font-medium">
                   Demo
                 </button>
