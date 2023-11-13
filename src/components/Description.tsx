@@ -2,7 +2,7 @@ import React from "react";
 
 function Description() {
   return (
-    <article className="font-sm text-black font-light tracking-wide leading-relaxed">
+    <article className="prose-lg dark:prose-invert">
       Hello! I&apos;m Moh Ilhamuddin, a passionate Full Stack Web Developer. My
       expertise lies in crafting seamless and responsive user experiences using
       React and Next.js on the frontend. On the backend, I thrive with the power

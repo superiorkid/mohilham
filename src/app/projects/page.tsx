@@ -45,7 +45,7 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
             key={index}
             className="aspect-square flex grow flex-col rounded-md shadow-md border"
           >
-            <div className="flex-1 relative aspect-video">
+            <div className="flex-1 relative aspect-video hidden md:block">
               <Image
                 fill
                 src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1955&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -89,7 +89,7 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
                   ))}
                 </div>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-6 gap-x-4">
+              <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-4 text-sm">
                 <button className="p-2 border border-gray-500 bg-white rounded-md font-medium col-span-2 flex space-x-2 items-center justify-center hover:bg-gray-200 transition-colors">
                   <FaPlay className="h-4 w-4" />
                   <span>Demo</span>
