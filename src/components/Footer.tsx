@@ -9,7 +9,7 @@ function Footer() {
           Made with <FaHeart className="mx-1 text-red-500" /> by me
         </span>
       </div>
-      <p>
+      <p className="hidden md:block">
         <button>EN</button> / <button className="font-bold">ID</button>
       </p>
     </div>

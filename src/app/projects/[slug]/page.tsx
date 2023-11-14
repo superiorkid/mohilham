@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MdKeyboardBackspace } from "react-icons/md";
+import { MdKeyboardBackspace, MdCalendarMonth } from "react-icons/md";
 
 interface Props {
   params: { slug: string };
@@ -20,7 +20,10 @@ function ProjectDetailPage({ params: { slug } }: Props) {
         <h1 className="font-bold text-4xl mb-5">Nextagram</h1>
 
         <div className="flex items-center justify-between text-sm">
-          <time className="text-gray-600">22 june 2000</time>
+          <time className="text-gray-600">
+            <MdCalendarMonth className="inline-flex w-4 h-4 mr-2" />
+            22 june 2000
+          </time>
           <p className="hidden md:block">
             <span className="text-gray-500"> Tags:</span>
             {"  "}Nextjs, TailwindCSS, Prisma, PostgreSQL

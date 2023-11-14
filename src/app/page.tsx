@@ -9,26 +9,26 @@ function Home() {
   return (
     <div className="px-5">
       <div className="py-5 flex flex-col md:flex-row space-x-1 items-center">
-        <div>
+        <div className="w-[200px] h-[200px] md:w-[250px] md:h-[250px] relative">
           <Image
-            src="/me.jpg"
-            width={250}
-            height={250}
+            fill
+            priority
+            src="/me.JPG"
             alt="Ilham"
-            className="rounded-full"
-            loading="lazy"
+            className="rounded-full object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <div className="p-6 space-y-5">
           <div className="space-y-2">
-            <h1 className="font-extrabold text-4xl font-serif">
+            <h1 className="font-extrabold text-3xl md:text-4xl font-serif">
               Moh. Ilhamuddin
             </h1>
-            <span className="text-md text-slate-500 font-normal flex flex-row items-center">
+            <span className="text-md text-slate-500 font-normal justify-center md:justify-start flex flex-row items-center">
               <MdOutlineWorkOutline className="mr-1 text-lg" />
               Full Stack Web Developer
             </span>
-            <p className="font-normal text-slate-500 flex flex-row items-center">
+            <p className="font-normal text-slate-500 flex flex-row items-center justify-center md:justify-start">
               <MdOutlineLocationOn className="mr-1 text-lg" />
               Lombok, West Nusa Tenggara
             </p>

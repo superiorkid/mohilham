@@ -14,7 +14,9 @@ function Navbar() {
   return (
     <header className="py-5 fixed bg-white w-screen z-10">
       <div className="justify-between px-5 md:justify-start flex flex-row items-center md:space-x-10">
-        <strong className="text-md font-extrabold">ILHAM</strong>
+        <Link href="/" className="text-md font-extrabold">
+          ILHAM
+        </Link>
         <div className="text-xs hidden md:flex">
           <NavItem />
         </div>
@@ -76,15 +78,6 @@ function Navbar() {
             }`}
           >
             PROJECTS
-          </Link>
-          <Link
-            onClick={(e) => setOpenMobileMenu(false)}
-            href="/blog"
-            className={`hover:text-orange-500 mobile-menu-button ${
-              pathname === "/blog" ? `${navItemStyle}` : ""
-            }`}
-          >
-            BLOG
           </Link>
         </div>
       </div>
