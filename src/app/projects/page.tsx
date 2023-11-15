@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { FaStar } from "react-icons/fa";
+import { getProject } from "../../../actions/project.action";
 import ProjectCard from "./components/ProjectCard";
 import SortedOption from "./components/SortedOption";
 
@@ -14,6 +15,8 @@ type PageParams = {
 };
 
 async function ProjectPage({ searchParams: { sort } }: PageParams) {
+  const projects = await getProject();
+
   return (
     <div className="py-5 space-y-3">
       <div className="flex flex-row space-x-1 px-5">
@@ -37,8 +40,8 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-5">
-        {Array.from({ length: 5 }).map((_, index) => (
-          <ProjectCard key={index} />
+        {projects.map((project, index) => (
+          <ProjectCard key={index} project={project} />
         ))}
       </div>
     </div>

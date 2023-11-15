@@ -13,7 +13,8 @@ datasource db {
 model Proejct {
   id          Int      @id @default(autoincrement())
   name        String   @unique @db.VarChar(255)
-  description String   @db.Text
+  description String   @db.VarChar(255)
+  body        String   @db.Text
   thumbnail   String?
   screenShoot String[]
 }
