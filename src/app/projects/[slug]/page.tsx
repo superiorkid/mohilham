@@ -8,7 +8,7 @@ interface Props {
 
 function ProjectDetailPage({ params: { slug } }: Props) {
   return (
-    <main className="mt-8 max-w-screen-md mx-auto px-3 md:px-0">
+    <main className="mt-8 max-w-screen-md mx-auto px-3 md:px-0 mb-7">
       <div className="mt-6 mb-12">
         <Link href="/projects" className="text-gray-600 hover:underline">
           <MdKeyboardBackspace className="h-4 w-4 inline-flex mr-2" />
@@ -61,6 +61,25 @@ function ProjectDetailPage({ params: { slug } }: Props) {
             assumenda explicabo dignissimos, ipsam odit id, voluptate voluptas?
             Debitis ipsa est quo amet!
           </p>
+        </div>
+
+        <div>
+          <h3>Screenshoots</h3>
+
+          <div className="flex space-x-2">
+            {Array.from({ length: 3 }).map((_, index) => (
+              <div key={index} className="relative w-[120px] h-[100px]">
+                <Image
+                  fill
+                  src="https://images.unsplash.com/photo-1606146485595-d40e12dc4052?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt={`example result ${index}`}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover rounded-md"
+                  quality={75}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </article>
     </main>

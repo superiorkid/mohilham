@@ -18,9 +18,11 @@ function Skills() {
       {skills.map((skill, index) => (
         <div
           key={index}
-          className="px-3 py-0.5 border bg-gray-200 border-gray-300"
+          className="px-3 py-0.5 border bg-gray-200 border-gray-300 hover:bg-gray-300"
         >
-          <h1>{skill.name}</h1>
+          <Link href={skill.url} className="text-sm">
+            {skill.name}
+          </Link>
         </div>
       ))}
     </div>

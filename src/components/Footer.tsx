@@ -10,7 +10,7 @@ function Footer() {
         </span>
       </div>
       <p className="hidden md:block">
-        <button>EN</button> / <button className="font-bold">ID</button>
+        <button className="font-bold">EN</button> / <button>ID</button>
       </p>
     </div>
   );
