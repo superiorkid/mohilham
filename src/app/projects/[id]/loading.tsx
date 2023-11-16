@@ -1,6 +1,5 @@
 import Link from "next/link";
-import React from "react";
-import { MdCalendarMonth, MdKeyboardBackspace } from "react-icons/md";
+import { MdKeyboardBackspace } from "react-icons/md";
 
 const loading = () => {
   return (
@@ -20,8 +19,7 @@ const loading = () => {
           <div className="bg-gray-200 animate-pulse h-5 w-1/2"></div>
         </div>
 
-        {/* heading image */}
-        <div className="relative h-[35dvh] bg-gray-200 animate-pulse"></div>
+        <div className="relative h-[45dvh] bg-gray-200 animate-pulse"></div>
 
         <div className="mt-20 md:mt-20 space-y-4">
           <div className="w-full bg-gray-200 animate-pulse h-6"></div>

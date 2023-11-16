@@ -51,18 +51,18 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <div className="mt-3 flex justify-between items-center">
             <p className="font-medium text-gray-500 flex items-center space-x-1.5">
               <MdCalendarMonth className=" w-5 h-5" />
-              <span>3 june 2000</span>
+              <span>{project.createdAt?.toDateString()}</span>
             </p>
             <p className="font-bold items-center flex space-x-1.5 text-gray-700">
               <FaRegStar className="w-5 h-5" />
               <span>120</span>
             </p>
           </div>
-          <p className="line-clamp-5 mt-3.5 leading-relaxed text-gray-600">
+          <p className="line-clamp-5 mt-3.5 leading-relamodexed text-gray-600">
             {project.description}
           </p>
 
-          <div className="flex space-x-2 mt-3.5">
+          <div className="flex flex-wrap gap-2 mt-3.5">
             {tags.map((tag, index) => (
               <div key={index} className="border py-0.5 px-4 bg-gray-200">
                 {tag}
