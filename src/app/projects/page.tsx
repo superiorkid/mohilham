@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { FaStar } from "react-icons/fa";
-import { getProject } from "../../../actions/project.action";
+import { getProjects } from "../../../actions/project.action";
 import ProjectCard from "./components/ProjectCard";
 import SortedOption from "./components/SortedOption";
 
@@ -15,7 +15,7 @@ type PageParams = {
 };
 
 async function ProjectPage({ searchParams: { sort } }: PageParams) {
-  const projects = await getProject();
+  const projects = await getProjects();
 
   return (
     <div className="py-5 space-y-3">
@@ -24,7 +24,9 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
           <h1 className="font-bold text-3xl">PROJECTS</h1>
         </div>
         <div>
-          <span className="px-3 bg-slate-300 text-xs rounded-full">35</span>
+          <span className="px-3 bg-slate-300 text-xs rounded-full">
+            {projects.length}
+          </span>
         </div>
       </div>
 
@@ -39,11 +41,17 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-5">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
-      </div>
+      {projects.length < 1 ? (
+        <div>
+          <p className="text-rose-500">Projects empty</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-5">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -1,12 +1,16 @@
+import Tags from "@/components/Tags";
 import Image from "next/image";
 import Link from "next/link";
 import { MdKeyboardBackspace, MdCalendarMonth } from "react-icons/md";
+import { getProject } from "../../../../actions/project.action";
 
 interface Props {
-  params: { slug: string };
+  params: { id: string };
 }
 
-function ProjectDetailPage({ params: { slug } }: Props) {
+async function ProjectDetailPage({ params: { id } }: Props) {
+  const project = await getProject(id);
+
   return (
     <main className="mt-8 max-w-screen-md mx-auto px-3 md:px-0 mb-7">
       <div className="mt-6 mb-12">
@@ -24,10 +28,7 @@ function ProjectDetailPage({ params: { slug } }: Props) {
             <MdCalendarMonth className="inline-flex w-4 h-4 mr-2" />
             22 june 2000
           </time>
-          <p className="hidden md:block">
-            <span className="text-gray-500"> Tags:</span>
-            {"  "}Nextjs, TailwindCSS, Prisma, PostgreSQL
-          </p>
+          <Tags project={project} />
         </div>
 
         {/* heading image */}

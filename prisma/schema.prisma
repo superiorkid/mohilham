@@ -9,16 +9,35 @@ datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
-  // shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
-model Proejct {
-  id          Int      @id @default(autoincrement())
-  name        String   @unique @db.VarChar(255)
-  description String   @db.VarChar(255)
-  body        String   @db.Text
-  thumbnail   String?
-  screenShoot String[]
+model Project {
+  id           String         @id @default(cuid())
+  name         String         @unique @db.VarChar(255)
+  description  String         @db.VarChar(255)
+  body         String         @db.Text
+  thumbnail    String?
+  screenShoot  String[]
+  github_url   String?
+  demo_url     String?
+  TagOnProject TagOnProject[]
 
   @@index([name])
+}
+
+model Tag {
+  id           Int            @id @default(autoincrement())
+  name         String         @unique
+  TagOnProject TagOnProject[]
+
+  @@index([name])
+}
+
+model TagOnProject {
+  project   Project @relation(fields: [projectId], references: [id])
+  projectId String
+  tag       Tag     @relation(fields: [tagId], references: [id])
+  tagId     Int
+
+  @@id([projectId, tagId])
 }

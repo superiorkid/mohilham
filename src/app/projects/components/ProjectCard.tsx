@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaPlay, FaRegStar } from "react-icons/fa6";
 import { MdCalendarMonth } from "react-icons/md";
-import { Proejct } from "@prisma/client";
+import { Prisma } from "@prisma/client";
 
 interface ProjectCardProps {
-  project: Proejct;
+  project: Prisma.ProjectGetPayload<{
+    include: {
+      TagOnProject: {
+        include: {
+          project: true;
+          tag: true;
+        };
+      };
+    };
+  }>;
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
+  const tags = useMemo(() => {
+    const tagonproject = project.TagOnProject;
+
+    const tags = tagonproject.map((project) => project.tag.name);
+
+    return tags;
+  }, []);
+
   return (
     <div className="aspect-square flex grow flex-col rounded-md shadow-md border">
       <div className="flex-1 relative aspect-video hidden md:block">
@@ -25,8 +42,8 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         <div>
           <h1 className="text-2xl font-black">
             <Link
-              href="/projects/nextagram"
-              className="hover:underline transition-transform"
+              href={`/projects/${project.id}`}
+              className="hover:underline transition-transform capitalize"
             >
               {project.name}
             </Link>
@@ -46,22 +63,35 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </p>
 
           <div className="flex space-x-2 mt-3.5">
-            {Array.from({ length: 3 }).map((_, index) => (
+            {tags.map((tag, index) => (
               <div key={index} className="border py-0.5 px-4 bg-gray-200">
-                tag{index}
+                {tag}
               </div>
             ))}
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-6 gap-2 md:gap-4 text-sm">
-          <button className="p-2 border border-gray-500 bg-white rounded-md font-medium col-span-2 flex space-x-2 items-center justify-center hover:bg-gray-200 transition-colors">
-            <FaPlay className="h-4 w-4" />
-            <span>Demo</span>
-          </button>
-          <button className="p-2 border border-gray-500 bg-white rounded-md font-medium flex space-x-2 items-center col-span-2 justify-center hover:bg-gray-200 transition-colors">
-            <FaGithub className="h-4 w-4" />
-            <span>Source Code</span>
-          </button>
+          {project.demo_url && (
+            <Link
+              href={project.demo_url}
+              target="_blank"
+              className="p-2 border border-gray-500 bg-white rounded-md font-medium col-span-2 flex space-x-2 items-center justify-center hover:bg-gray-200 transition-colors"
+            >
+              <FaPlay className="h-4 w-4" />
+              <span>Demo</span>
+            </Link>
+          )}
+
+          {project.github_url && (
+            <Link
+              href={project.github_url}
+              target="_blank"
+              className="p-2 border border-gray-500 bg-white rounded-md font-medium flex space-x-2 items-center col-span-2 justify-center hover:bg-gray-200 transition-colors"
+            >
+              <FaGithub className="h-4 w-4" />
+              <span>Source Code</span>
+            </Link>
+          )}
         </div>
       </div>
     </div>
