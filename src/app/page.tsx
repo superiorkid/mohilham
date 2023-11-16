@@ -12,7 +12,7 @@ function Home() {
         <div className="w-[200px] h-[200px] md:w-[250px] md:h-[250px] relative">
           <Image
             fill
-            priority
+            loading="eager"
             src="/me.JPG"
             alt="Ilham"
             className="rounded-full object-cover"

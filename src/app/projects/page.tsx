@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { FaStar } from "react-icons/fa";
-import { getProjects } from "../../../actions/project.action";
+import { getProjects, totalStars } from "../../../actions/project.action";
 import ProjectCard from "./components/ProjectCard";
 import SortedOption from "./components/SortedOption";
 
@@ -16,6 +16,7 @@ type PageParams = {
 
 async function ProjectPage({ searchParams: { sort } }: PageParams) {
   const projects = await getProjects();
+  const stars = await totalStars();
 
   return (
     <div className="py-5 space-y-3">
@@ -32,11 +33,11 @@ async function ProjectPage({ searchParams: { sort } }: PageParams) {
 
       <div className="flex flex-row justify-between px-5">
         <SortedOption />
-        <div className="font-reg text-sm text-slate-500 flex flex-row items-center">
+        <div className="font-reg text-sm text-slate-500 flex space-x-2 items-center">
           <label>Total stars</label>
           <span className="flex flex-row items-center text-black font-semibold">
-            <FaStar className="ml-1" />
-            15
+            <FaStar className="mr-1" />
+            {stars}
           </span>
         </div>
       </div>

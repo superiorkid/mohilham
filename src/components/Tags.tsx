@@ -22,7 +22,7 @@ const Tags = ({ project }: TagsProps) => {
     const tags = tagonproject?.map((project) => project.tag.name);
 
     return tags?.join(", ");
-  }, []);
+  }, [project?.TagOnProject]);
 
   return (
     <p className="hidden md:block">
