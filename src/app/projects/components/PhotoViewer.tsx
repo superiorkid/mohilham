@@ -14,8 +14,8 @@ const PhotoViewer = ({ screenshoots }: PhotoViewerProps) => {
     <div className="flex space-x-2">
       <PhotoProvider>
         {screenshoots?.map((image, index) => (
-          <PhotoView src={image}>
-            <div key={index} className="relative w-[120px] h-[100px]">
+          <PhotoView src={image} key={index}>
+            <div className="relative w-[120px] h-[100px]">
               <Image
                 fill
                 loading="lazy"
