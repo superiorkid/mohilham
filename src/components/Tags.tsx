@@ -8,21 +8,20 @@ interface TagsProps {
     include: {
       TagOnProject: {
         include: {
-          project: true;
           tag: true;
         };
       };
     };
-  }>;
+  }> | null;
 }
 
 const Tags = ({ project }: TagsProps) => {
   const tags = useMemo(() => {
-    const tagonproject = project.TagOnProject;
+    const tagonproject = project?.TagOnProject;
 
-    const tags = tagonproject.map((project) => project.tag.name);
+    const tags = tagonproject?.map((project) => project.tag.name);
 
-    return tags.join(", ");
+    return tags?.join(", ");
   }, []);
 
   return (
