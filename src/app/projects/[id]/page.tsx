@@ -29,7 +29,7 @@ async function ProjectDetailPage({ params: { id } }: Props) {
   const project = await getProject(id);
 
   return (
-    <main className="mt-8 max-w-screen-md mx-auto px-3 md:px-0 mb-7">
+    <main className="mt-8 max-w-screen-md mx-auto px-3 md:px-0 mb-10">
       <div className="mt-6 mb-12">
         <Link href="/projects" className="text-gray-600 hover:underline">
           <MdKeyboardBackspace className="h-4 w-4 inline-flex mr-2" />

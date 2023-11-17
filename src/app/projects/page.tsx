@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 
 type PageParams = {
   searchParams: {
-    sort: string;
+    sort: "asc" | "desc";
   };
 };
 
-async function ProjectPage({ searchParams: { sort } }: PageParams) {
+async function ProjectPage({ searchParams: { sort = "desc" } }: PageParams) {
   const projects = await getProjects();
   const stars = await totalStars();
 

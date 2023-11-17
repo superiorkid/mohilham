@@ -11,7 +11,7 @@ function loading() {
           <h1 className="font-bold text-3xl">PROJECTS</h1>
         </div>
         <div>
-          <span className="px-3 bg-slate-300 text-xs rounded-full">35</span>
+          <div className="px-3 bg-gray-200 animate-pulse rounded-full h-5 w-[20px]"></div>
         </div>
       </div>
 
@@ -19,10 +19,7 @@ function loading() {
         <SortedOption />
         <div className="font-reg text-sm text-slate-500 flex flex-row items-center">
           <label>Total stars</label>
-          <span className="flex flex-row items-center text-black font-semibold">
-            <FaStar className="ml-1" />
-            15
-          </span>
+          <span className="flex flex-row items-center bg-gray-200 animate-pulse w-[20px] h-6"></span>
         </div>
       </div>
 
@@ -40,7 +37,7 @@ function loading() {
                   <p className="font-medium w-1/2 bg-gray-200 animate-pulse flex items-center space-x-1.5"></p>
                   <p className="font-medium w-1/2 bg-gray-200 animate-pulse flex items-center space-x-1.5"></p>
                 </div>
-                <p className="line-clamp-5 mt-3.5 h-[20dvh] w-full bg-gray-200 animate-pulse leading-relaxed"></p>
+                <p className="mt-3.5 h-[20dvh] w-full bg-gray-200 animate-pulse leading-relaxed"></p>
 
                 <div className="flex space-x-2 mt-3.5">
                   {Array.from({ length: 3 }).map((_, index) => (
