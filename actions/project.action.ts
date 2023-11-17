@@ -3,6 +3,32 @@
 import extractRepositoryName from "@/lib/extract-repo-name";
 import prisma from "../prisma/client";
 
+export const getPaginateProject = async (
+  sort: "asc" | "desc" = "desc",
+  page: number
+) => {
+  const perPage: number = 4;
+
+  try {
+    const projects = await prisma.project.findMany({
+      include: {
+        TagOnProject: {
+          include: {
+            project: true,
+            tag: true,
+          },
+        },
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+    return projects;
+  } catch (error) {
+    throw new Error("failed to fetch projects");
+  }
+};
+
 export const getProjects = async () => {
   try {
     const projects = await prisma.project.findMany({
@@ -75,13 +101,13 @@ export const totalStars = async () => {
 
   const repoUrls = projects.map((project) => project.github_url);
 
-  let startCount = 0;
+  let startCount: number = 0;
 
   for (const repoUrl of repoUrls) {
     const name = extractRepositoryName(repoUrl as string);
 
     const repoDetail = await getRepositoryDetail(name as string);
-    startCount += repoDetail.stargazers_count;
+    startCount += Number(repoDetail.stargazers_count);
   }
 
   return startCount;
