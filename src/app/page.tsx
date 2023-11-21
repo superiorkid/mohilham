@@ -26,7 +26,7 @@ function Home() {
             </h1>
             <span className="text-md text-slate-500 font-normal justify-center md:justify-start flex flex-row items-center">
               <MdOutlineWorkOutline className="mr-1 text-lg" />
-              Full Stack Web Developer
+              Professional Google Searcher
             </span>
             <p className="font-normal text-slate-500 flex flex-row items-center justify-center md:justify-start">
               <MdOutlineLocationOn className="mr-1 text-lg" />
