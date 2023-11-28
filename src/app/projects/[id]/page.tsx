@@ -9,14 +9,6 @@ interface Props {
   params: { id: string };
 }
 
-export async function generateStaticParams() {
-  const projects = await getProjects();
-
-  return projects.map((project) => ({
-    id: project.id,
-  }));
-}
-
 export async function generateMetadata({ params: { id } }: Props) {
   const project = await getProject(id);
 
