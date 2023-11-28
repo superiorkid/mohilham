@@ -2,7 +2,7 @@ import Tags from "@/components/Tags";
 import Image from "next/image";
 import Link from "next/link";
 import { MdCalendarMonth, MdKeyboardBackspace } from "react-icons/md";
-import { getProject, getProjects } from "../../../../actions/project.action";
+import { getProject } from "../../../../actions/project.action";
 import PhotoViewer from "../components/PhotoViewer";
 
 interface Props {
