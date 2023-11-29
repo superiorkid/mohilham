@@ -17,6 +17,7 @@ function SortedOption() {
         id="cars"
         className="rounded-lg"
         onChange={handleFilterChange}
+        disabled
       >
         <option value="dateDesc" className="pl-2">
           start date
