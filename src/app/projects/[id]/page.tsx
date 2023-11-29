@@ -2,11 +2,19 @@ import Tags from "@/components/Tags";
 import Image from "next/image";
 import Link from "next/link";
 import { MdCalendarMonth, MdKeyboardBackspace } from "react-icons/md";
-import { getProject } from "../../../../actions/project.action";
+import { getProject, getProjects } from "../../../../actions/project.action";
 import PhotoViewer from "../components/PhotoViewer";
 
 interface Props {
   params: { id: string };
+}
+
+export async function generateStaticParams() {
+  const projects = await getProjects();
+
+  return projects.map((project) => ({
+    id: project.id,
+  }));
 }
 
 export async function generateMetadata({ params: { id } }: Props) {
