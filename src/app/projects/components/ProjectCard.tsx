@@ -45,8 +45,8 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   }, [reponName]);
 
   return (
-    <div className="flex grow flex-col rounded-md shadow-md border">
-      <div className="flex-1 relative aspect-video hidden md:block">
+    <div className="flex grow flex-col aspect-square rounded-md shadow-md border">
+      <div className="relative flex-1 hidden md:block">
         <Image
           fill
           src={project.thumbnail as string}

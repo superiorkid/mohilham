@@ -26,7 +26,7 @@ function MediaConnect() {
       </Link>
       <Link
         download
-        href="https://www.cakeresume.com/pdf/s--D_q5UHO5i0zQnaCbtDGN7w--/ZPM8X.pdf"
+        href="https://www.cakeresume.com/pdf/s--qOP0wWzlNXA2QgZZP4BjNQ--/3ry9P.pdf"
         className="hover:text-orange-600"
       >
         <AcademiconsCv />
