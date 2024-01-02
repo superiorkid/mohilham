@@ -1,6 +1,7 @@
 "use server";
 
 import extractRepositoryName from "@/lib/extract-repo-name";
+import extractRepositoryOwner from "@/lib/extract-repo-owner";
 import prisma from "../prisma/client";
 
 export const getPaginateProject = async (
@@ -71,10 +72,13 @@ export const getProject = async (id: string) => {
   }
 };
 
-export const getRepositoryDetail = async (repositoryName: string) => {
+export const getRepositoryDetail = async (
+  owner: string,
+  repositoryName: string
+) => {
   try {
     const res = await fetch(
-      `https://api.github.com/repos/${process.env.GITHUB_OWNER}/${repositoryName}`,
+      `https://api.github.com/repos/${owner}/${repositoryName}`,
       {
         method: "GET",
         headers: {
@@ -105,8 +109,9 @@ export const totalStars = async () => {
 
   for (const repoUrl of repoUrls) {
     const name = extractRepositoryName(repoUrl as string);
+    const owner = extractRepositoryOwner(repoUrl as string);
 
-    const repoDetail = await getRepositoryDetail(name as string);
+    const repoDetail = await getRepositoryDetail(owner, name as string);
     startCount += Number(repoDetail.stargazers_count);
   }
 
