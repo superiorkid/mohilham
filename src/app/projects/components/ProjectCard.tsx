@@ -1,6 +1,7 @@
 "use client";
 
 import extractRepositoryName from "@/lib/extract-repo-name";
+import extractRepositoryOwner from "@/lib/extract-repo-owner";
 import { Prisma } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,6 +26,7 @@ interface ProjectCardProps {
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const [githubStars, setGithubStars] = useState<number>(0);
   const reponName = extractRepositoryName(project.github_url as string);
+  const repoOwner = extractRepositoryOwner(project.github_url as string);
 
   const tags = useMemo(() => {
     const tagonproject = project.TagOnProject;
@@ -36,7 +38,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   useEffect(() => {
     const repoDetail = async () => {
-      const repo = await getRepositoryDetail(reponName as string);
+      const repo = await getRepositoryDetail(repoOwner, reponName as string);
 
       setGithubStars((stars) => repo.stargazers_count);
     };
