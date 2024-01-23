@@ -15,8 +15,7 @@ type PageParams = {
 };
 
 async function ProjectPage({ searchParams: { sort = "desc" } }: PageParams) {
-  const projects = await getProjects();
-  const stars = await totalStars();
+  const [projects, stars] = await Promise.all([getProjects(), totalStars()]);
 
   return (
     <div className="py-5 space-y-3">
